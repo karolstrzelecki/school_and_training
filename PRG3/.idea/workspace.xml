@@ -75,16 +75,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1572463445030</updated>
-      <workItem from="1572463450297" duration="132000" />
+      <workItem from="1572463450297" duration="212000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132000" />
+    <option name="totallyTimeSpent" value="212000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="732" extended-state="1" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Image Layers" />
