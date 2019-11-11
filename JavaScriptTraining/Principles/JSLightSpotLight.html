@@ -1,0 +1,149 @@
+
+<html>
+<head>
+    <title>16 - Spot Lightt</title>
+    <link rel = "stylesheet" href = "Style.css">
+    <script src = "three.min.js"></script>
+</head>
+<body>
+</body>
+</html>
+
+<script>
+    let scene, camera, renderer,  spotLight1, spotLight2, target1, target2;
+    let cube1, cube2, cube3, plane;
+    let ADD = 0.2, theta = 0;
+
+
+    let createGeometry = function() {
+        let geometry = new THREE.BoxGeometry(5,5,5);
+        let material = new THREE.MeshPhongMaterial({
+            color: 0xdff913,
+            shininess: 100,
+            side: THREE.DoubleSide});
+
+        cube1 = new THREE.Mesh(geometry, material);
+        cube1.position.set(5,0,0);
+
+        geometry = new THREE.BoxGeometry(7,3,2);
+        material = new THREE.MeshPhongMaterial({
+            color: 0x7f7fff,
+            shininess: 100,
+            side: THREE.DoubleSide});
+        cube2 = new THREE.Mesh(geometry, material);
+        cube2.position.set(0,-5,0);
+
+
+        geometry = new THREE.BoxGeometry(2,5,4);
+        material = new THREE.MeshPhongMaterial({
+            color: 0xff7373,
+            shininess: 100,
+            side: THREE.DoubleSide});
+        cube3 = new THREE.Mesh(geometry, material);
+        cube3.position.set(-5,5,0);
+
+
+        geometry = new THREE.BoxGeometry(2000,1,2000);
+        material = new THREE.MeshPhongMaterial({
+            color : 0x693421,
+            side : THREE.DoubleSide});
+        plane = new THREE.Mesh(geometry, material);
+        plane.position.y = -1;
+        scene.add(cube1);
+        scene.add(cube2);
+        scene.add(cube3);
+        scene.add(plane);
+
+
+    };
+
+
+
+    let init = function() {
+        // create the scene
+        scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x000000);
+
+        // create an locate the camera
+        camera = new THREE.PerspectiveCamera(75,
+            window.innerWidth / window.innerHeight,
+            1, 1000);
+        camera.position.set(0,10,20);
+
+
+        spotLight1 = new THREE.SpotLight(0xffffff, 1);
+        spotLight1.position.set(15,20,10);
+        spotLight1.angle = Math.PI / 20;
+        spotLight1.penumbra = 0.5;
+        spotLight1.decay = 2;
+        spotLight1.distance  = 200;
+
+        target1 = new THREE.Object3D();
+        target1.position.set(20,0,0);
+        spotLight1.target = target1;
+
+        scene.add(target1);
+
+        spotLight2 = new THREE.SpotLight(0x3fd2fa,1);
+        spotLight2.position.set(-15,20,10);
+        spotLight2.angle = Math.PI / 15;
+        spotLight2.penumbra = 0.5;
+        spotLight2.decay = 2;
+        spotLight2.distance  = 200;
+
+        target2 = new THREE.Object3D();
+        target2.position.set(-10,0,0);
+        spotLight2.target = target2;
+
+        scene.add(target2);
+
+        scene.add(spotLight1);
+        scene.add(spotLight2);
+
+        createGeometry();
+
+        // create the renderer
+        renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        document.body.appendChild(renderer.domElement);
+
+    };
+
+
+    // main animation loop - calls 50-60 times per second.
+    let mainLoop = function() {
+        target1.position.x -= ADD;
+        target2.position.x += ADD;
+
+
+
+        if(target1.position.x < -20  || target1.position.x > 20)
+            ADD *= -1;
+
+        // if(spotLight2.position.x > 15 || spotLight2.position.x <-15)
+        //     ADD *= -1;
+
+
+        // lightHelper.update();
+
+        renderer.render(scene, camera);
+        requestAnimationFrame(mainLoop);
+    };
+
+    ///////////////////////////////////////////////
+    init();
+    mainLoop();
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
