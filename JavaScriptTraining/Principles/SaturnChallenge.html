@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel = "stylesheet" href = "Style.css">
+    <script src = "three.min.js"></script>
+</head>
+<body>
+</body>
+</html>
+
+<script>
+
+
+
+    let scene, camera, renderer,cube, sphere, torus;
+    let rings = [];
+    let ADD = 0.1;
+    let donuts = [];
+
+    let createSphere = function() {
+        let geometry = new THREE.SphereGeometry(5,30,30);
+        let material = new THREE.MeshBasicMaterial({color : 0xffbc58});
+        sphere = new THREE.Mesh(geometry, material);
+        scene.add(sphere);
+
+    };
+
+    let createCube = function(){
+        let geometry = new THREE.BoxGeometry(1,1,1);
+        let material = new THREE.MeshBasicMaterial({color : 0x00a1cb});
+        cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+
+    };
+
+    let createTorus = function(x,y,z) {
+        let geometry = new THREE.TorusGeometry(x,y,2,30);
+        let material = new THREE.MeshBasicMaterial({color: z});
+        torus = new THREE.Mesh(geometry, material);
+        scene.add(torus);
+        rings.push(torus);
+
+    };
+
+
+    // === Rain of Donuts ===
+
+    let randomRange = function(from, to){
+        let x = Math.random() * (to - from);
+        return x + from;
+    };
+
+    let createDonut = function() {
+        let geometry = new THREE.TorusGeometry(1, 0.5, 5,30);
+        let material = new THREE.MeshBasicMaterial({color : Math.random() * 0xffffff});
+        let donut = new THREE.Mesh(geometry, material);
+        donut.position.x = randomRange(-15,15);
+        donut.position.z = randomRange(-15,15);
+        donut.position.y = 15;
+        scene.add(donut);
+        donuts.push(donut);
+
+    };
+
+
+    let init = function(){
+        // create the scene
+        scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x000000);
+
+        // create and locate the camera
+
+        camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 1, 1000);
+
+        camera.position.z = 30;
+       camera.position.y = -10;
+        camera.position.x = 10;
+
+        //let axes = new THREE.AxesHelper(5); // Axes Helper
+        //  scene.add(axes);
+
+        // createCube();
+        //createSphere();
+        //  createTorus()
+
+
+        createSphere();
+        // createTorus(6,0.5, 0xffbc58)
+        createTorus(6, 0.5, 0xdeb887);
+        createTorus(7.1,0.5, 0xffbc58);
+        createTorus(8.2, 0.5, 0xdeb887);
+
+        rings.forEach(d => {d.rotation.x =1.7
+            d.rotation.y = 0.5});
+
+
+
+
+        //create the renderer
+
+        renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        document.body.appendChild(renderer.domElement);
+
+
+    };
+
+    //main animation loop calls 50-60 a second
+
+    let mainLoop = function(){
+
+        // === Cube ====
+
+        //cube.position.y += ADD;
+        // cube.rotation.z -= ADD;
+
+        // if(cube.position.x <= -3 || cube.position.x >= 3)
+        //     ADD *= -1;
+
+        // === Sphere ====
+
+        // sphere.rotation.x  += ADD;
+        // sphere.rotation.y  += ADD;
+
+        //=== torus ====
+
+        // torus.rotation.x += ADD;
+        // torus.rotation.y += ADD;
+
+
+
+
+
+        camera.position.y += ADD;
+        if(camera.position.y >= 20 || camera.position.y <= -20)
+            ADD *= -1;
+
+        renderer.render(scene,camera);
+        requestAnimationFrame(mainLoop);
+
+    };
+
+    //////////////////////////////
+    init();
+    mainLoop();
+
+
+
+</script>
