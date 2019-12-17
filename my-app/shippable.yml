@@ -1,0 +1,16 @@
+language: java
+
+jdk: oraclejdk8
+
+before_install:
+  - mvn clean install
+
+after_success:
+  - mvn test
+
+
+notifications:
+  email:
+    recipients:
+      s17435@pjwstk.edu.pl
+
