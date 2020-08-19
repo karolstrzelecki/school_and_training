@@ -3,8 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel = "stylesheet" href = "Style.css">
+    <script src = "three.min.js"></script>
 </head>
 <body>
-
 </body>
 </html>
+
+<script>
+
+    var camera, scene, renderer;
+    var geometry;
+
+    var mouse = new THREE.Vector3( 0, 0, 0.5 );
+
+    init();
+    animate();
+
+    function init() {
+
+        camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 10 );
+        camera.position.z = 1;
+
+        scene = new THREE.Scene();
+
+        geometry = new THREE.BufferGeometry();
+        geometry.drawRange.count = 1;
+
+        var vertices = new Array( 1000 ).fill( 0 ); // use an array with enough space and init with 0 values
+
+        var positionAttribtue = new THREE.Float32BufferAttribute( vertices, 3 );
+        positionAttribtue.dynamic = true;
+        geometry.addAttribute( 'position', positionAttribtue );
+
+        var material = new THREE.LineBasicMaterial( { color: 0xffffff } );
+
+        var lines = new THREE.Line( geometry, material );
+        lines.frustumCulled = false;
+        scene.add( lines );
+
+        renderer = new THREE.WebGLRenderer( { antialias: true } );
+        renderer.setPixelRatio( window.devicePixelRatio );
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        document.body.appendChild( renderer.domElement );
+
+        document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+        document.addEventListener( 'contextmenu', onContextMenu, false );
+
+        window.addEventListener( 'resize', onWindowResize, false );
+
+    }
+
+    function onWindowResize() {
+
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize( window.innerWidth, window.innerHeight );
+
+    }
+
+    function onContextMenu( event ) {
+
+        event.preventDefault();
+
+    }
+
+    function onDocumentMouseDown( event ) {
+
+        event.preventDefault();
+
+        switch ( event.which ) {
+            case 1: // left mouse click
+
+                mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+                mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+                mouse.unproject( camera );
+                addPoint( mouse );
+                break;
+
+            case 3: // right mouse click
+                removeLastPoint();
+                break;
+        }
+
+    }
+
+    function addPoint( coord ) {
+
+        var positionAttribtue = geometry.getAttribute( 'position' );
+
+// add point to buffer data
+// we use the current count of drawRange as our index
+
+        var index = geometry.drawRange.count;
+
+        positionAttribtue.setXYZ( index, coord.x, coord.y, coord.z );
+
+// only update the part of the buffer that has actually changed
+
+        positionAttribtue.updateRange.offset = positionAttribtue.itemSize * index;
+        positionAttribtue.updateRange.count =  positionAttribtue.itemSize;
+        positionAttribtue.needsUpdate = true;
+
+// increase draw count to draw the new segment
+
+        geometry.drawRange.count ++;
+
+    }
+
+    function removeLastPoint() {
+
+        if ( geometry.drawRange.count > 1 ) {
+
+            geometry.drawRange.count --;
+
+        }
+
+    }
+
+    function animate() {
+
+        requestAnimationFrame( animate );
+        renderer.render( scene, camera );
+
+    }
+
+
+
+</script>

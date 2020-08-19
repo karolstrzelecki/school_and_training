@@ -2,18 +2,89 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c549411-e1c5-4df6-821c-b00b0d2f59b9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Assignment6/.idea/description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/.idea/project-template.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/Assignment6.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/META-INF/Assignment6.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/Assignment/App$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/Assignment/App$10.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/Assignment/App$11$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/Assignment/App$11.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/Assignment/App$12.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/Assignment/App$13.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/Assignment/App$2$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/Assignment/App$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/Assignment/App$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/Assignment/App$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/Assignment/App$5$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/Assignment/App$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/Assignment/App$6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/Assignment/App$7.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/Assignment/App$8$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/Assignment/App$8.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/Assignment/App$9.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/Assignment/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/Assignment/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/intellij/uiDesigner/core/AbstractLayout.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/intellij/uiDesigner/core/DimensionInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/intellij/uiDesigner/core/GridConstraints.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/intellij/uiDesigner/core/GridLayoutManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/intellij/uiDesigner/core/Spacer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/intellij/uiDesigner/core/SupportCode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/out/production/Assignment6/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/src/com/Assignment/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConcurrencyAndThreads/.idea/description.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ConcurrencyAndThreads/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConcurrencyAndThreads/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConcurrencyAndThreads/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConcurrencyAndThreads/.idea/project-template.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ConcurrencyAndThreads/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ConcurrencyAndThreads/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConcurrencyAndThreads/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ConcurrencyAndThreads/ConcurrencyAndThreads.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConcurrencyAndThreads/out/production/ConcurrencyAndThreads/META-INF/ConcurrencyAndThreads.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConcurrencyAndThreads/out/production/ConcurrencyAndThreads/com/Assignment/AnotherThread.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConcurrencyAndThreads/out/production/ConcurrencyAndThreads/com/Assignment/Main$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConcurrencyAndThreads/out/production/ConcurrencyAndThreads/com/Assignment/Main$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConcurrencyAndThreads/out/production/ConcurrencyAndThreads/com/Assignment/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConcurrencyAndThreads/out/production/ConcurrencyAndThreads/com/Assignment/MyRunnable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConcurrencyAndThreads/out/production/ConcurrencyAndThreads/com/Assignment/ThreadColor.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ConcurrencyAndThreads/src/com/Assignment/AnotherThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ConcurrencyAndThreads/src/com/Assignment/Main.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ConcurrencyAndThreads/src/com/Assignment/MyRunnable.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ConcurrencyAndThreads/src/com/Assignment/ThreadColor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/project-template.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ConcurrencyAndThreads2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ConcurrencyAndThreads2/com/Assignment/Countdown.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ConcurrencyAndThreads2/com/Assignment/CountdownThread.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ConcurrencyAndThreads2/com/Assignment/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ConcurrencyAndThreads2/com/Assignment/ThreadColor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/Assignment/Main.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/Assignment/ThreadColor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaScriptTraining/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaScriptTraining/.idea/JavaScriptTraining.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaScriptTraining/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaScriptTraining/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaScriptTraining/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../JavaScriptTraining/Principles/JSActionEventMouseEvents.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tmpAssign6/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tmpAssign6/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tmpAssign6/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tmpAssign6/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tmpAssign6/tmpAssign6.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JavaScriptTraining/Principles/JSCameraChallenge.html" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaScriptTraining/Principles/JSActionEventsKeyboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JavaScriptTraining/Principles/JSCameraPerspectiveCamera.html" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaScriptTraining/Principles/JSCameraPerspectiveCamera.html" afterDir="false" />
     </list>
@@ -47,8 +118,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/Assignment/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+            <state relative-caret-position="291">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
               <folding>
                 <element signature="e#840#841#0" expanded="true" />
                 <element signature="e#878#879#0" expanded="true" />
@@ -131,8 +202,15 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -176,16 +254,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573593720272</updated>
-      <workItem from="1573593724676" duration="1385000" />
+      <workItem from="1573593724676" duration="3458000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1385000" />
+    <option name="totallyTimeSpent" value="3458000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="548" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
@@ -193,17 +270,17 @@
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Learn" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22727273" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22727273" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.5019763" side_tool="true" weight="0.329429" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329429" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49802372" weight="0.329429" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -232,8 +309,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Assignment/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+        <state relative-caret-position="291">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
           <folding>
             <element signature="e#840#841#0" expanded="true" />
             <element signature="e#878#879#0" expanded="true" />

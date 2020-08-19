@@ -3,8 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src = "three.min.js"></script>
 </head>
 <body>
+<script>
+
+    let scene, camera, renderer,raycaster, mouse, plane, planeNormal,point;
+    let stars = [];
+    let ADD = 0.01;
+    let dt = 0.1;
+
+    class Star {
+        constructor(position, velocity, g) {
+            this.velocity = velocity;
+            this.velocity.multiplyScalar(dt);
+
+            let starGeometry = new THREE.Geometry();
+            starGeometry.vertices.push(new THREE.Vector3( 0, 0, 0));
+            let starMaterial = new THREE.PointsMaterial( {
+                color: "yellow",
+                size: 4,
+                sizeAttenuation: false } );
+
+
+
+            this.shape.position.copy(position);
+        }
+        move() {
+            this.shape.position.add(this.velocity);
+            this.shape.rotation.x += ADD;
+
+
+        }
+    }
+
+
+
+    let onMouseDown = function(event) {
+        getPoint(event);
+       // if (draw.checked)
+        for (let i = 0; i<4; i++) {
+            setPoint();
+        }
+        console.log("message")
+    };
+
+let createStar = function(){
+    let starGeometry = new THREE.Geometry();
+    starGeometry.vertices.push(new THREE.Vector3( 0, 0, 0));
+    let starMaterial = new THREE.PointsMaterial( { size: 1, sizeAttenuation: false } );
+    let star = new THREE.Points( starGeometry, starMaterial );
+    scene.add( star );
+
+
+};
+
+
+
+    let getPoint= function(event) {
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+        planeNormal.copy(camera.position).normalize();
+        plane.setFromNormalAndCoplanarPoint(planeNormal, scene.position);
+        raycaster.setFromCamera(mouse, camera);
+        raycaster.ray.intersectPlane(plane, point);
+    };
+
+    let setPoint = function() {
+        // let sphere = new THREE.Mesh(new THREE.SphereBufferGeometry(.125, 4, 2), new THREE.MeshBasicMaterial({
+        //     color: "yellow",
+        //     wireframe: true
+        // }));
+        // sphere.position.copy(point);
+        // stars.push(sphere);
+        // scene.add(sphere);
+
+        let starGeometry = new THREE.Geometry();
+        starGeometry.vertices.push(new THREE.Vector3( 0, 0, 0));
+        let starMaterial = new THREE.PointsMaterial( {
+            color: "yellow",
+            size: 4,
+            sizeAttenuation: false } );
+        let star = new THREE.Points( starGeometry, starMaterial );
+        //star.position.copy(point);
+        let x = point.x;
+        let y = point.y;
+        let z = point.z;
+        star.position.x = x;
+        star.position.y = y;
+        star.position.z = z;
+        stars.push(star);
+
+        scene.add(star);
+
+        console.log(point.x+ " "+ point.y+ " "+ point.z );
+
+    };
+
+    let init = function() {
+        scene = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+        camera.position.set(0, 0, 10);
+        renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        //var controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+        raycaster = new THREE.Raycaster();
+        mouse = new THREE.Vector2();
+        plane = new THREE.Plane();
+        planeNormal = new THREE.Vector3();
+        point = new THREE.Vector3();
+
+        document.addEventListener("mousedown", onMouseDown, false);
+    };
+
+    let mainLoop = function(){
+
+
+
+
+
+        for (let i = 0; i < stars.length; i++) {
+
+
+            stars[0].position.x -=ADD;
+            stars[0].position.z +=ADD;
+
+            stars[1].position.y +=ADD;
+            stars[1].position.z +=ADD;
+
+            stars[2].position.x +=ADD;
+            stars[2].position.z +=ADD;
+
+            stars[3].position.y -= ADD;
+            stars[3].position.z += ADD;
+
+
+
+
+
+            // if(i%2 == 0){
+            //     stars[i].position.x  -= ADD;
+            // }
+        }
+
+
+        //star.position.y += ADD;
+        requestAnimationFrame(mainLoop);
+        renderer.render(scene, camera);
+
+    };
+
+// ToDo:
+    // zamiast kuli jakis point w roznych kolorach
+    // zrobic konstruktor do tego gowna
+    // zawrzec w tabeli
+    // zrobic animacje zeby dolecialo
+    // po doleceniu ma wybuchnac
+    // s
+
+
+
+
+    init();
+    mainLoop();
+
+
+
+</script>
 
 </body>
 </html>

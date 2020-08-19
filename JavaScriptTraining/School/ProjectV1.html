@@ -3,8 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://threejs.org/build/three.min.js"></script>
+    <div style="position:absolute;">
+        <input id="draw" type="checkbox">
+        <label for="draw" style="color: white;">draw</label>
+    </div>
 </head>
 <body>
+    <script>
+        //=== Variables ====
+        let scene, camera, renderer;
+            //raycaster, mouse, plane, planeVec, pointVec;
+
+        let raycaster = new THREE.Raycaster();
+        let mouse = new THREE.Vector2();
+        let plane = new THREE.Plane();
+        let planeNormal = new THREE.Vector3();
+        let point = new THREE.Vector3();
+
+
+
+        // Function
+        let onMouseDown = function(e){
+            getPoint(e);
+            setPoint();
+        };
+        function getPoint(event) {
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+            planeNormal.copy(camera.position).normalize();
+            plane.setFromNormalAndCoplanarPoint(planeNormal, scene.position);
+            raycaster.setFromCamera(mouse, camera);
+            raycaster.ray.intersectPlane(plane, point);
+        }
+
+        function setPoint() {
+            let sphere = new THREE.Mesh(new THREE.SphereBufferGeometry(.125, 4, 2), new THREE.MeshBasicMaterial({
+                color: "yellow",
+                wireframe: true
+            }));
+            sphere.position.copy(point);
+            scene.add(sphere);
+        }
+
+
+
+
+        // InitFunction
+        let init = function () {
+            scene = new THREE.Scene();
+            // plane = new THREE.Plane();
+
+
+            camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+            // raycaster = new THREE.Raycaster();
+            // mouse = new THREE.Vector2(); // Mouse operates in two dimmensions
+            // planeVec = new THREE.Vector3();
+            // pointVec = new THREE.Vector3();
+
+
+
+            renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+            document.addEventListener("mousedown", onMouseDown, false);
+
+
+
+
+
+
+        };
+
+
+
+
+        let mainLoop = function() {
+
+
+            renderer.render(scene, camera);
+            requestAnimationFrame(mainLoop);
+        };
+
+        init();
+        mainLoop();
+
+
+    </script>
 
 </body>
 </html>

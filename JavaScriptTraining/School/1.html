@@ -1,10 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<script>
+    var barVals = [];
+    function draw() {
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+// calculate highest bar value (used to scale the rest)
+        var highest = 0;
+        for (b=0; b<barVals.length; b++) {
+            if (barVals[b]>highest)
+                highest=barVals[b];
+        }
+// we have 8 horizontal lines so calculate an appropriate scale
+        var lineSpacing = 1;
+        var highestLine = 7*lineSpacing;
+        while (highestLine<highest) {
+            lineSpacing *= 10;
+            highestLine = 7*lineSpacing;
+        }
+// grey background
+        ctx.fillStyle = "rgb(200,200,200)";
+        ctx.fillRect (0, 0, 600, 450);
+// draw and (if we have any data to scale from) label horizontal
+        lines
+        var lineNum = 0;
+        ctx.fillStyle="white";
+        ctx.font="16px sans-serif";
+        for (y=0; y<=350; y+=50) {
+// line
+            ctx.beginPath();
+            ctx.moveTo(50,y+50);
+            ctx.lineTo(550,y+50);
+            ctx.stroke();
+// label (the 6 is an offset to centre the text vertically on
+            the line)
+    if (barVals.length>0) {
+        ctx.fillText(lineSpacing*lineNum, 10, 400-y+6);
+        lineNum++;
+    }
+    }
+    // draw boxes (widths based on how many we have)
+    var barWidth = 500/barVals.length;
+    var halfBarWidth = barWidth/2;
+    for (b=0; b<barVals.length; b++) {
+// calculate size of box and draw it
+        var x = 60+b*barWidth;
+        var hgt = (barVals[b]/highestLine)*350; // as fraction of
+        highest line
+        if (b%2==0)
+            ctx.fillStyle = "red";
+        else
+            ctx.fillStyle = "blue";
+        ctx.fillRect(x,400-hgt,barWidth,hgt);
+// calculate position of text and draw it
+        ctx.fillStyle="white";
+        var metrics = ctx.measureText(barVals[b]);
+        var halfTextWidth = metrics.width/2;
+        x = 60+halfBarWidth+(b*barWidth)-halfTextWidth;
+        ctx.fillText(barVals[b], x, 420-hgt);
+    }
+    }
+    function addBar() {
+        var textBoxObj = document.getElementById("barVal");
+        barVals.push(parseInt(textBoxObj.value)); // add new value to end of
+        array. As an integer not a string!!
+            draw(); // redraw
+        textBoxObj.value = 0;
+    }
+</script>
 </head>
-<body>
-
+<body onload="draw();">
+<center>
+    <canvas id="canvas" width="600" height="450"></canvas>
+    <form>
+        <BR>
+        <input type=button value='Add Bar' onclick='addBar();'> <input id='barVal'
+                                                                       value=0>
+    </form>
 </body>
 </html>
